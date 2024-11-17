@@ -89,7 +89,9 @@
 
   #foot-text {
     font-style: italic;
-    
+    padding: 15px;
+    border: 1px solid #69696970;
+    -webkit-mask-image: radial-gradient(circle 10px at 0 0, transparent 0, transparent 20px, black 21px);
   }
 
   #foot-text2 {
