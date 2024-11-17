@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <meta name="game" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" src="/style/style.css">
+    <title>rockGame</title>
+    </head>
+    <body>
+        <script href="/js/main.js">
+            function getRandomItem(arr) {
+                    const randomIndex = Math.floor(Math.random() * arr.length);
+                    const item = arr[randomIndex];
+                    return item;
+                }
+            
+            
+            function gamer(game) {
+                const array = ["rock", "paper", "scissors"];
+                const result = getRandomItem(array);
+                game = game.toLowerCase().trim();    
+            return game === "rock" && result === "paper"? alert("Computer wins.\nYou chose rock and computer chose " + result+".")
+            : game === "rock" && result === "scissors"? alert("You win.\nYou chose rock and computer chose " + result+".")
+            : game === "rock" && result === "rock"? alert("Play again.\nYou and computer both chose " + result+".")
+            
+            : game === "scissors" && result === "paper"? alert("You win\nYou chose scissors and computer chose " + result+".")
+            : game === "scissors" && result === "rock"? alert("Computer wins\nYou chose scissors and computer chose " + result+".")
+            : game === "scissors" && result === "scissors"? alert("Play again.\nYou and computer both chose " + result+".")
+            
+            : game === "paper" && result === "paper"? alert("Play again.\nYou and computer both chose " + result+".")
+            : game === "paper" && result === "rock"? alert("You win\nYou chose paper and computer chose " + result+".")
+            : game === "paper" && result === "scissors"? alert("Computer wins\nYou chose paper and computer chose " + result+".")
+            
+            : alert("you didn't choose");
+        }
+
+        let choose = confirm("Do you want to play?");
+        while (choose) {
+            let game = prompt("Let's play. Choose rock, paper or scissors.");
+
+            if (game === false) {
+                alert("Game cancelled");
+                break;
+            }
+
+            gamer(game);
+            choose=confirm("replay?");
+        }
+
+        if (!choose) {
+            alert('Thanks for playing! Bye!');
+        }
+        </script>
+        </body>
